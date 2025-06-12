@@ -1,0 +1,113 @@
+---
+import Event from "./Event.astro";
+interface timelineProps {
+    timeline: Array<string>
+}
+const { timeline } = Astro.props as timelineProps;
+const arraySize:number = timeline.length - 1;
+---
+<div class="content">
+    <h2>Timeline</h2>
+    <div class="timeline">
+        {
+            timeline.map( (value:string, index:number) => (
+                <Event icon={value[0]} name={value[1]} hour={value[2]} />
+                <div class:list={["separator", { "es-visible" : index < arraySize  }]}></div>
+            ))
+        }
+    </div>
+</div>
+
+<style lang="scss" is:inline>
+    .content {
+        flex-direction: column;
+
+        h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: #8D8D8D;
+            font-weight: 400;
+        }
+        .timeline {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin: 120px 0;
+
+            .separator {
+                display: none;
+                width: 100px;
+                height: 1px;
+                background-color: #8D8D8D;
+                margin-top: 100px;
+
+                &.es-visible {
+                    display: block;
+                }
+            }
+
+            .event {
+                display: flex;
+                flex-direction: column;
+
+                .icon {
+                    display: flex;
+                    position: relative;
+                    justify-content: center;
+                    align-items: center;
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    border: 1px solid #8D8D8D;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 70px;
+
+                    &.recepcion-1 {
+                        background-image: url("assets/images/iconos/recepcion-1.svg");
+                    }
+                    &.recepcion-2 {
+                        background-image: url("assets/images/iconos/recepcion-2.svg");
+                    }
+                    &.civil {
+                        background-image: url("assets/images/iconos/civil.svg");
+                    }
+                    &.cena-1 {
+                        background-image: url("assets/images/iconos/cena-1.svg");
+                    }
+                    &.cena-2 {
+                        background-image: url("assets/images/iconos/cena-2.svg");
+                    }
+                    &.sesion {
+                        background-image: url("assets/images/iconos/sesion.svg");
+                    }
+                    &.iglesia {
+                        background-image: url("assets/images/iconos/iglesia.svg");
+                    }
+                    &.vals {
+                        background-image: url("assets/images/iconos/vals.svg");
+                    }
+                    &.baile {
+                        background-image: url("assets/images/iconos/baile.svg");
+                    }
+                    &.brindis {
+                        background-image: url("assets/images/iconos/brindis.svg");
+                    }
+                }
+
+                .name {
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: #5d5d5d;
+                    margin: 20px 0 5px;
+                }
+
+                .hour {
+                    text-align: center;
+                    color: #5d5d5d;
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+</style>

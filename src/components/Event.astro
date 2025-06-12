@@ -1,0 +1,15 @@
+---
+interface EventProps{
+    icon: string,
+    name: string,
+    hour: string
+}
+
+const { icon, name, hour } = Astro.props as EventProps;
+---
+
+<div class="event">
+    <div class:list={["icon", icon]}></div>
+    <div class="name">{name}</div>
+    <div class="hour">{hour}</div>
+</div>

@@ -1,0 +1,92 @@
+---
+import Logo from '@assets/majo-y-diego/logo.svg';
+
+interface Parents {
+    papaNovia: string;
+    mamaNovia: string;
+    papaNovio: string;
+    mamaNovio: string;
+    Novio: string;
+    Novia: string;
+}
+
+const { papaNovia, mamaNovia, papaNovio, mamaNovio, Novia, Novio } = Astro.props as Parents;
+---
+<div class="content">
+    <div class="invitacion">
+        <div class="nosotros">Nosotros</div>
+        <div class="novios-nombres">
+            <img src={Logo.src} alt="" />
+        </div>
+        <div class="texto">
+            <p>Tenemos el honor de invitarlo a nuestra boda.</p>
+            <p>Queremos que este día sea muy especial, por eso nos gustaría vivirlo junto a todos ustedes.</p>
+        </div>
+        <div class="padres">
+            <div class="papas-novia">
+                <small>Papás de { Novia }</small>
+                <p>{ papaNovia }</p>
+                <p>{ mamaNovia }</p>
+            </div>
+            <div class="papas-novio">
+                <small>Papás de { Novio }</small>
+                <p>{ papaNovio }</p>
+                <p>{ mamaNovio }</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style lang="scss" is:inline>
+    .invitacion {
+        max-width: 500px;
+
+        .nosotros {
+            font-size: 1.25rem;
+            color: #8d8d8d;
+            text-align: center;
+        }
+
+        .novios-nombres {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0 2rem;
+
+            img {
+                width: 70%;
+            }
+        }
+
+        .texto {
+            p {
+                text-align: center;
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                color: #5d5d5d;
+            }
+        }
+
+        .padres {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            margin-top: 4rem;
+
+            .papas-novia, .papas-novio {
+                small {
+                    color: #5d5d5d;
+                    font-size: 1.25rem;
+                    line-height: 2;
+                    text-transform: uppercase;
+                }
+                p {
+                    font-size: 1.2rem;
+                    color: #8d8d8d;
+                    font-family: "Jost", sans-serif;
+                }
+            }
+        }
+    }
+</style>

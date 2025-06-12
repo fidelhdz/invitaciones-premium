@@ -1,0 +1,83 @@
+---
+import LogoJade from '@assets/logo_jade.svg';
+---
+<footer>
+	<ul>
+        <li>
+            <div class="counter">
+                <div class="counter-item" id="counter-days">
+                    <div class="data-number">45</div>
+                    <div class="data-unit">Días</div>
+                </div>
+                <div class="counter-item" id="counter-hours">
+                    <div class="data-number">45</div>
+                    <div class="data-unit">Horas</div>
+                </div>
+                <div class="counter-item" id="counter-minutes">
+                    <div class="data-number">45</div>
+                    <div class="data-unit">Minutos</div>
+                </div>
+                <div class="counter-item" id="counter-seconds">
+                    <div class="data-number">45</div>
+                    <div class="data-unit">Segundos</div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="creator"><img src={LogoJade.src} alt=""/></div>
+        </li>
+    </ul>
+</footer>
+
+<style lang="scss" is:inline>
+	footer {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+        padding: 20px 0;
+        z-index: 99;
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            margin: 0;
+            list-style: none;
+            height: 3rem;
+
+            li {
+                .counter {
+                	display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 30px;
+
+                    .counter-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .data-number {
+                            font-size: 2.1rem;
+                            color: white;
+                        }
+
+                        .data-unit {
+                            font-size: 0.85rem;
+                            text-transform: uppercase;
+                            color: #484848;
+                        }
+                    }
+                }
+
+                .creator {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+	}
+</style>

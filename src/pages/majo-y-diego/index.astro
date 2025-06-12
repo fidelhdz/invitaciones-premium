@@ -1,0 +1,54 @@
+---
+import "../../scss/styles.scss";
+import InvLayout from "@layouts/InvLayout.astro";
+import TopNav from "@components/TopNav.astro";
+import Footer from "@components/Footer.astro";
+import CitaBiblica from "@components/CitaBiblica.astro";
+import VideoBG from "@components/VideoBG.astro";
+import Celebremos from "@components/Celebremos.astro";
+import Timeline from "@components/Timeline.astro";
+---
+<InvLayout>
+    <VideoBG video_source="/assets/video/majo-y-diego/background_video.mp4" />
+    <TopNav />
+    <section>
+        <Celebremos papaNovia="Sebastián González" mamaNovia="Mariana Cantú" Novia="Majo" Novio="Diego" papaNovio="Maximiliano Villarreal" mamaNovio="Blanca Urrutia" />
+    </section>
+    <section>
+        <CitaBiblica versiculo="Cantares 8:6-7A">
+            <Fragment slot="slotTexto">
+            <p>Grábame como un sello sobre tu corazón; llévame como una marca sobre tu brazo. Fuerte es el amor, como la muerte, y tenaz la pasión, como el sepulcro. Como llama divina es el fuego ardiente del amor. Ni las muchas aguas pueden apagarlo, ni los ríos pueden extinguirlo.</p>
+        </CitaBiblica>
+    </section>
+    <section>
+        <div class="content">
+            <div class="story">
+                <div class="story-title"><h2>Nuestra Historia</h2></div>
+                <div class="story-text">
+                    <h4>Un encuentro destinado</h4>
+                    <p>En los pasillos de la preparatoria, nuestros caminos se cruzaron por primera vez. Éramos compañeros de clase, y lo que comenzó como una simple amistad pronto se transformó en algo mucho más profundo. Con el paso del tiempo, nuestra conexión se fortaleció, y aquella amistad se convirtió en un noviazgo que duró siete maravillosos años.</p>
+                    <p>Durante ese tiempo, construimos juntos un baúl de recuerdos llenos de aventuras y risas. Recuerdo cómo nos encantaba escaparnos a la playa, donde las olas parecían contarnos secretos del futuro. Terminamos nuestras carreras uno al lado del otro, siempre apoyándonos en cada paso del camino. Las citas en el cine, los conciertos, y las tardes en el circo se convirtieron en nuestros rituales de felicidad. Pasear juntos por la vida era lo que más nos divertía.</p>
+                </div>
+                <div class="story-text">
+                    <h4>La Propuesta de Matrimonio</h4>
+                    <p>Un día, sentí que era el momento de dar el siguiente gran paso. Decidí sorprender a Mony con una cena en mi casa, simple pero cargada de amor. Antes de la cena, nos dedicamos a un juego especial: adornar camisetas con las huellas de nuestras manos y las de nuestra mascota, como un símbolo de nuestra unión. Pero lo mejor estaba por venir.</p>
+                    <p>En mi habitación, preparé cada detalle con esmero: peluches que representaban nuestras primeras citas, dulces que evocaban los momentos más dulces que habíamos compartido, globos llenos de promesas, velas que iluminaban nuestro futuro juntos, y una música suave que susurraba el amor que sentía por ella.</p>
+                    <p>Cuando Mony entró en la habitación, su rostro se iluminó con una mezcla de sorpresa y alegría. Me arrodillé frente a ella, con el corazón latiendo con fuerza, y le propuse que camináramos juntos por la vida, siempre de la mano.</p>
+                    <p>Ella dijo que sí, con destellos de felicidad en sus ojos. Y así, nos embarcamos en esta nueva y emocionante aventura, donde cada día es un capítulo más en nuestra historia de amor.</p>
+                    <p>Gracias por seguir siendo parte de nuestra historia, y por acompañarnos en cada paso de este maravilloso viaje.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <Timeline timeline={[
+            ['civil', 'Ceremonia Civil', '5:00 pm'],
+            ['iglesia', 'Ceremonia Religiosa', '6:00 pm'],
+            ['recepcion-2', 'Recepción', '7:20 pm'],
+            ['cena-1', 'Cena', '9:00 pm'],
+            ['baile', 'Baile', '9:45 pm'],
+        ]}
+        />
+    </section>
+    <Footer />
+</InvLayout>

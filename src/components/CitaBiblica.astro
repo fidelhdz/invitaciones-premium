@@ -1,0 +1,36 @@
+---
+// Cita CitaBiblica
+const { versiculo } = Astro.props;
+---
+<div class="content">
+    <div class="cita-biblica">
+        <h2>{ versiculo }</h2>
+        <slot name="slotTexto" />
+    </div>
+</div>
+
+
+<style lang="scss" is:inline>
+    .cita-biblica {
+        max-width: 600px;
+        transform: translateX(50%);
+
+        h2 {
+            font-family: "Bellefair", serif;
+            font-size: 4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: #8d8d8d;
+            margin: 0;
+        }
+
+        p {
+            font-family: "Jost", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #585858;
+            margin-left: 100px;
+        }
+    }
+</style>

@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bellefair", serif;
+    font-weight: 400 !important;
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+    background-color: #AADCD0;
+}
+
+section {
+    min-height: 100svh;
+    width: 100%;
+    position: relative;
+
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100svh;
+        width: 100%;
+
+        .story {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+
+            .story-title {
+                text-align: center;
+                margin-bottom: 80px;
+
+                h2 {
+                    font-size: 2.5rem;
+                    text-transform: uppercase;
+                    color: #8D8D8D;
+                    font-weight: 400;
+                }
+            }
+
+            .story-text {
+                position: relative;
+                width: 50%;
+
+                &:last-of-type {
+                    left: 50%;
+                    margin-top: 80px;
+                }
+
+                h4 {
+                    font-size: 1.5rem;
+                    font-weight: 400;
+                    color: #5d5d5d;
+                }
+
+                p {
+                    margin: 20px 0;
+                    margin-left: 50px;
+                    font-family: "Jost", sans-serif;
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    color: #6a6a6a;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
