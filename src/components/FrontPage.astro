@@ -1,0 +1,90 @@
+---
+import Logo from '@assets/majo-y-diego/logo.svg';
+---
+
+<div id="front-page">
+    <div class="content">
+        <img src={Logo.src} alt="" />
+        <a href="#" class="btn-access">Abrir invitación</a>
+    </div>
+</div>
+
+<audio loop id="ambient-music">
+    <source src="/assets/sound/majo-y-diego/ambient.mp3">
+</audio>
+
+<style lang="scss" is:inline>
+    #ambient-music {
+        opacity: 0;
+    }
+    #front-page {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100svw;
+        height: 100svh;
+        background-color: rgb(255 255 255 / 0.7);
+        z-index: 999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(8px);
+
+        &.disabled {
+            display: none;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+
+            img {
+                width: 300px;
+            }
+
+            a {
+                border: 1px solid #00b1b1;
+                color: #00b1b1;
+                padding: 10px 20px;
+                border-radius: 20px;
+                text-decoration: none;
+                font-size: 18px;
+                text-transform: uppercase;
+                transition: all 0.5s ease-in-out;
+                filter: drop-shadow(0 0 2px #00b1b1);
+
+                &:hover {
+                    background-color: #00b1b1;
+                    color: #fff;
+                }
+            }
+        }
+    }
+</style>
+
+<script is:inline>
+    let buttonOpen = document.querySelector('.btn-access');
+    const frontPage = document.querySelector('#front-page');
+    const ambientMusic = document.querySelector('#ambient-music');
+
+    window.addEventListener('DOMMouseScroll', preventDefault, false);
+    window.addEventListener('wheel', preventDefault, { passive: false });
+    window.addEventListener('touchmove', preventDefault, { passive: false });
+    function preventDefault(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    buttonOpen.addEventListener('click', () => {
+        frontPage.classList.add('disabled');
+        ambientMusic.play();
+        ambientMusic.volume = 0.3;
+        window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.removeEventListener('wheel', preventDefault, { passive: false });
+        window.removeEventListener('touchmove', preventDefault, { passive: false });
+    });
+
+    
+</script>

@@ -103,7 +103,19 @@ import Logo from "@assets/majo-y-diego/logo.svg";
 
 <script is:inline>
     const soundBar = document.querySelector(".sound-control");
+    const controlMusic = document.querySelector('.sound-control');
+
     soundBar.addEventListener("click", () => {
         soundBar.classList.toggle("paused");
+        if (ambientMusic.paused) {
+            ambientMusic.play();
+        } else {
+            ambientMusic.pause();
+        }
+    });
+
+    controlMusic.addEventListener('click', () => {
+        
     });
 </script>
+
